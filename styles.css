@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+/* General responsive scaling */
+:root {
+    font-size: 1vw; /* Base font size using viewport width */
+}
+
+.mcontainer{
+    display: flex;
+    min-height: 100svh;
+}
+
+.header{
+    background-color: #00275E;
+    color: white;
+}
+
+.sidenav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport height */
+    width: 25%; /* Set the width of the sidebar */
+    background-color: white;
+    transition: width 0.3s; /* Add transition effect for smooth resizing */
+}
+
+.w-75{
+    margin-left: 25%;
+}
+
+.profile{
+    padding: 20px;
+    border-bottom: 1px solid #000000;
+}
+.img {
+    width: 80px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+.img img {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.user-info h2 {
+    margin-bottom: 0;
+}
+
+.name{
+    font-size: 20px;
+}
+
+.navcontainer{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.navitems{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navitem{
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.book-title{
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.book{
+    border-radius: 20px;
+    background-color: #808080;
+}
+
+.book-desc{
+    font-size: 13px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 992px) {
+    .sidenav {
+        width: 20%; /* Adjust sidebar width for medium screens */
+    }
+    .w-75 {
+        margin-left: 20%; /* Adjust content area for medium screens */
+    }
+    .name,
+    .book-title,
+    .book-desc {
+        font-size: 3vw; /* Adjust font size for medium screens */
+    }
+    .navitem {
+        font-size: calc(3.5vw + 10px); /* Adjust font size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidenav {
+        width: 25%; /* Reset sidebar width for small screens */
+    }
+    .w-75 {
+        margin-left: 25%; /* Reset content area for small screens */
+    }
+    .name,
+    .book-title,
+    .book-desc {
+        font-size: 3.5vw; /* Adjust font size for small screens */
+    }
+    .navitem {
+        font-size: calc(4vw + 8px); /* Adjust font size for small screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .sidenav {
+        display: none; /* Hide sidebar for extra small screens */
+    }
+    .w-75 {
+        margin-left: 0; /* Reset content area margin for extra small screens */
+        width: 100%; /* Set content area width to full for extra small screens */
+    }
+    .name,
+    .book-title,
+    .book-desc {
+        font-size: 4vw; /* Adjust font size for extra small screens */
+    }
+    .navitem {
+        font-size: calc(5vw + 6px); /* Adjust font size for extra small screens */
+    }
+}
